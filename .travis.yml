@@ -3,3 +3,11 @@ osx_image: xcode10.1
 xcode_project: testRepo.xcodeproj
 xcode_scheme: testRepo
 xcode_sdk: iphonesimulator12.1
+deploy:
+  provider: releases
+  api_key:
+    secure: LzIR7iXysify/UZ9DrNWDyrudivLKubnQeBSETfPXE4eUoOSa3xQZO1BXXAtoWThxDQG3yWReKTuuXaCjNW0mzObRMYR7mDm80FTvg6p80K4iUa5ruKjgDBPLf6hjvcKVSeyK0qJ3L3Ihkq0X6fJ6qAOxnwZuB5bpPGmSh9SaHjiZk1wWYAMlQWK4dyWGxt9zStP78iDnwVcKFY5qATVmrYWV0eiDC1O6BE8CULR1EHAGducwIv1pwsGC+H6FMJ1hvpYi2EUyPj9xRnjdUms1VdlRolbtHFFYiJjroVh8d6hRW8GDIB+2M2ZQegNe22+TxU6SXMJ9Eh2C2/tOrJHysAAtBIR6mJjEporjm8zNDYqCJSwCmiNjQN8qkRUoQqn2J5o17QHQtKjlgpereLTX+henmX6LrIGWlGwvP/NQqnPKVYlWLd7a5weeWDjuaGSf7qRMX8xHjoOnXpg9bsJwBJiCPF7G7lVglkLBjVu9EhSbT8wy01k/ASDgSzzpjXUzEiGNgEpA0l7hhOryDo+9b1jD+yQ5VMGDbviDGln+dywk0khArf3ThkoFwiJg5H+oJPmyTJWnJ66jN9dor8+81R25gaotkQxadAViqLIjFL/W38ylIMUM2THDtkxZ3f63h2ACR0r72/pb6N/k5wsuSdD0q7nX4tRYFv7zGRQA0k=
+  file: "${RELEASE_PKG_FILE}"
+  on:
+    repo: surekhas-tml/testRepo2
+    branch: develop
