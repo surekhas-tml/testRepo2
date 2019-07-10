@@ -3,6 +3,13 @@ osx_image: xcode10.1
 xcode_project: testRepo2.xcodeproj
 xcode_scheme: testRepo2
 xcode_sdk: iphonesimulator12.1
+env:
+  global:
+  - |
+    - APP_NAME="testRepo2"
+    - 'DEVELOPER_NAME="GTME_ProvProf_Dev"'
+    - PROFILE_NAME="development-provisioning-profile"
+  - secure: LkVxPdasrGGP5T3Q/OLnhyGtcHS4JvmcDuyel/sECBUrum4iTsTw+CKC1KAFWqk+AkfWlv0AYwQ/Ks8ZxIrtzK5BhiHbq93qJqCzp162FzkMp4xMgyWVZQB42DVSHxDmOzLl0OOsn4DFMv6puKMjX2hEMgylIiULhXNgOkIWelTJNZWgYlncZqGUgirknVy4ANWA37v8VfUiQReBG5YyuN8xauZ6U0W6C6Eg4q2c/+Rd/nBlWz+27BMCr3AWhjWM/NEuAet4/DF+haM1eQKJTfSlb2gpkSfozbAC3FrVS7CpidgPvLGXI0jZcg+1D7hO7RDqCiUfzOn2aD59dqRxSQNayleql8iQ/Rq6pxdYvOKodaJ3nqFYKveLE8bU1dg1ZJPGDjwKH1TDtJ3ydFcqYK+WmJU0WndATEspU897DbJjkPxmTew0K+ft5EX6O8sH8IUc9LlznUlr8TQMvzTwIzwmSgfrvjbnS3XMqJBLBtw31qmKOD34Bq+/L5YGqrsaFLtQsscBONYyIibXvpC2/CP9Q+5i1rHQm1Z7pEYUuMhBQYRDp9/BtcbhcIjhjYJbVWPZ3i+WH5S8IEhRfqjthW34WXJ0a7pZf93Z4FEgHLE7xrjbVpF+9+zOvMDzEM65ADYI1OVLEdgXO7ngql2p8+onOI8pNzNqiGaQ++ZDhmM=
 deploy:
   provider: releases
   api_key:
@@ -11,3 +18,10 @@ deploy:
   on:
     repo: surekhas-tml/testRepo2
     branch: develop
+before_deploy:
+- export RELEASE_PKG_FILE=$(ls *.deb)
+- echo "deploying $RELEASE_PKG_FILE to GitHub releases"
+before_script:
+- "./scripts/add-key.sh"
+script:
+- "./scripts/build.sh"
