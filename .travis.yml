@@ -19,7 +19,7 @@ deploy:
     repo: surekhas-tml/testRepo2
     branch: develop
 before_deploy:
-- export RELEASE_PKG_FILE=$(ls *.deb)
+- export RELEASE_PKG_FILE=$(ls *.ipa)
 - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
 before_script:
 - "./scripts/add-key.sh"
