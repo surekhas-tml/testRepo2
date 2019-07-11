@@ -10,7 +10,7 @@ cp ./scripts/profile/$PROFILE_NAME.mobileprovision ~/Library/MobileDevice/Provis
 echo "*********************"
 echo "*     Archiving     *"
 echo "*********************"
-xcrun xcodebuild -project testRepo2.xcodeproj -target testRepo2 -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+xcrun xcodebuild -project testRepo2.xcodeproj -target testRepo2 -sdk iOSDevice ONLY_ACTIVE_ARCH=NO
 echo "**********************"
 echo "*     Exporting      *"
 echo "**********************"
