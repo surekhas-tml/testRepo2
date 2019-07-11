@@ -1,8 +1,8 @@
 language: objective-c
-osx_image: xcode10
+osx_image: xcode8
 xcode_project: testRepo2.xcodeproj
 xcode_scheme: testRepo2
-xcode_sdk: ios Device
+xcode_sdk: iphonesimulator8
 env:
   global:
   - |
