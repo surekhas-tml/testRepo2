@@ -20,7 +20,7 @@
     <key>provisioningProfiles</key>
         <dict>
             <key>com.tatamotors.egurucrm</key>
-            <string>Distribution</string>
+            <string>development</string>
         </dict>
 
 </dict>
